@@ -1,6 +1,6 @@
 from ..index import userscollection, app
 from flask import request, jsonify
-from ...models.CreateUserObject import User
+from ..models.CreateUserObject import User
 @app.route("/api/Users/create_user", methods=["POST"])
 def create_user():
     data = request.json

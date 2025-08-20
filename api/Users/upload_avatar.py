@@ -1,6 +1,6 @@
 from ..index import app, userscollection
 from flask import request,jsonify
-from ...models.UploadCloudinary import upload_image
+from ..models.UploadCloudinary import upload_image
 @app.route("/api/Users/upload_avatar", methods=["POST"])
 def upload_avatar():
     data = request.get_json()

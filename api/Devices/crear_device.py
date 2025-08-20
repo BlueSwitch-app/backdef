@@ -1,5 +1,5 @@
 from ..index import app, devicescollection
-from ...models.NewDevicesObject import Producto
+from ..models.NewDevicesObject import Producto
 from flask import request,jsonify
 from datetime import datetime
 import uuid
