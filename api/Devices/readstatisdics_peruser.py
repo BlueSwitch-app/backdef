@@ -1,9 +1,10 @@
 from ..index import app, devicescollection
-from flask import request,jsonify
+from flask import Blueprint, request,jsonify
 from ..models.CO2AnalyticsperDev import CalculateCO2forDevice
 from ..models.WattsAnalytics import calculateWatts
 import math 
-@app.route("/api/Devices/readstatisdics_peruser", methods=["POST"])
+devices_bp = Blueprint("devices", __name__)
+@devices_bp.route("/api/Devices/readstatisdics_peruser", methods=["POST"])
 def statistics_per_user():
     data = request.get_json()
     email = data.get("email")

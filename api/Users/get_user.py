@@ -1,7 +1,8 @@
 from ..index import app, userscollection
-from flask import request, jsonify
+from flask import Blueprint, request, jsonify
 
-@app.route("/api/Users/get_user", methods=['POST'])
+users_bp = Blueprint("users", __name__)
+@users_bp.route("/api/Users/get_user", methods=['POST'])
 def get_user_info():
     data = request.json
     email = data.get('email')

@@ -1,8 +1,8 @@
 
 from ..index import app, teamscollection
-from flask import request,jsonify
-
-@app.route("/api/Teams/read_team", methods=['POST'])
+from flask import Blueprint, request,jsonify
+teams_bp = Blueprint("teams", __name__)
+@teams_bp.route("/api/Teams/read_team", methods=['POST'])
 def read_teams():
     data = request.json
     user_email = data['email']

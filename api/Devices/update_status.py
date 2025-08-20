@@ -1,9 +1,10 @@
 
 from ..index import app, devicescollection, discardDevicesCollection
-from flask import request,jsonify
+from flask import Blueprint, request,jsonify
 from datetime import datetime
 
-@app.route("/api/Devices/update_status", methods=['PUT'])
+devices_bp = Blueprint("devices", __name__)
+@devices_bp.route("/api/Devices/update_status", methods=['PUT'])
 def update_device_status():
     data = request.get_json()
     device_id = data.get('id')

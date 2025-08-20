@@ -1,7 +1,8 @@
 from ..index import app, devicescollection
-from flask import request, jsonify
-
-@app.route("/api/Devices/read-CO2", methods=["POST"])
+from flask import request, jsonify, Blueprint
+from ..models.CO2Analytics import CalculateCO2
+devices_bp = Blueprint("devices", __name__)
+@devices_bp.route("/api/Devices/read-CO2", methods=["POST"])
 def read_CO2():
     data = request.get_json()
     email = data.get("email")

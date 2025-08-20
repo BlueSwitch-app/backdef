@@ -1,9 +1,10 @@
 from ..index import app, devicescollection
 from ..models.NewDevicesObject import Producto
-from flask import request,jsonify
+from flask import request,jsonify, Blueprint
 from datetime import datetime
 import uuid
-@app.route("/api/Devices/crear_device", methods=["POST"])
+devices_bp = Blueprint("devices", __name__)
+@devices_bp.route("/api/Devices/crear_device", methods=["POST"])
 def crear_producto():
     data = request.get_json()
     if not data:

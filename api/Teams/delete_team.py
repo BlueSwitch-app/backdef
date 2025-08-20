@@ -1,9 +1,9 @@
 
 from ..index import app, teamscollection
-from flask import request,jsonify
+from flask import Blueprint, request,jsonify
 
-
-@app.route("/api/Teams/delete_team", methods=['POST'])
+teams_bp = Blueprint("teams", __name__)
+@teams_bp.route("/api/Teams/delete_team", methods=['POST'])
 def delete_team():
     data = request.json
     team_code = data['teamcode']

@@ -1,7 +1,8 @@
 from ..index import app, userscollection
-from flask import request,jsonify
+from flask import Blueprint, request,jsonify
 
-@app.route("/api/Users/update_user", methods=["POST"])
+users_bp = Blueprint("users", __name__)
+@users_bp.route("/api/Users/update_user", methods=["POST"])
 def update_user():
     data = request.get_json()
     email = data.get("email")

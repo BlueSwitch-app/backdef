@@ -1,8 +1,8 @@
 
 from ..index import app, teamscollection,devicescollection,discardDevicesCollection
-from flask import request,jsonify
-
-@app.route("/api/Teams/leave_team", methods=['POST'])
+from flask import Blueprint, request,jsonify
+teams_bp = Blueprint("teams", __name__)
+@teams_bp.route("/api/Teams/leave_team", methods=['POST'])
 def leave_team():
     data = request.json
     user_email = data['email']

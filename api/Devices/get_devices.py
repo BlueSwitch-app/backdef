@@ -3,7 +3,7 @@ from flask import request,jsonify
 
 
 
-@app.route("/api/Devices/get_devices", methods=["POST"])
+@app.route("/get_devices", methods=["POST"])
 def get_devices():
     data = request.get_json()
     email = data.get("email")

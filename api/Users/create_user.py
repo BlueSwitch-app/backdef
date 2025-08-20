@@ -1,7 +1,8 @@
 from ..index import userscollection, app
-from flask import request, jsonify
+from flask import Blueprint, request, jsonify
 from ..models.CreateUserObject import User
-@app.route("/api/Users/create_user", methods=["POST"])
+users_bp = Blueprint("users", __name__)
+@users_bp.route("/api/Users/create_user", methods=["POST"])
 def create_user():
     data = request.json
     try:

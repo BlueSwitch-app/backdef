@@ -1,9 +1,10 @@
 
 from ..index import app, teamscollection
-from flask import request,jsonify
+from flask import Blueprint, request,jsonify
 
 
-@app.route("/api/Teams/update_members", methods=['POST'])
+teams_bp = Blueprint("teams", __name__)
+@teams_bp.route("/api/Teams/update_members", methods=['POST'])
 def update_members():
     data = request.json
     team_code = data['teamcode']

@@ -1,7 +1,8 @@
 from ..index import app, userscollection
-from flask import request,jsonify
+from flask import Blueprint, request,jsonify
 from ..models.UploadCloudinary import upload_image
-@app.route("/api/Users/upload_avatar", methods=["POST"])
+users_bp = Blueprint("users", __name__)
+@users_bp.route("/api/Users/upload_avatar", methods=["POST"])
 def upload_avatar():
     data = request.get_json()
     email = data.get("email")
