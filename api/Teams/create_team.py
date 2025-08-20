@@ -2,7 +2,7 @@ from ..index import app, teamscollection
 from flask import request,jsonify
 from ...models.CreateTeamObject import Team, TeamMember
 
-@app.route('/create_team', methods=['POST'])
+@app.route('/api/Teams/create_team', methods=['POST'])
 def create_team():
     data = request.json
     team_name = data['team_name']

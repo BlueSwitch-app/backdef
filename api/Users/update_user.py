@@ -1,7 +1,7 @@
 from ..index import app, userscollection
 from flask import request,jsonify
 
-@app.route("/update_user", methods=["POST"])
+@app.route("/api/Users/update_user", methods=["POST"])
 def update_user():
     data = request.get_json()
     email = data.get("email")

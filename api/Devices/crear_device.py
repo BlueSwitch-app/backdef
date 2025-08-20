@@ -3,7 +3,7 @@ from ...models.NewDevicesObject import Producto
 from flask import request,jsonify
 from datetime import datetime
 import uuid
-@app.route("/crear_device", methods=["POST"])
+@app.route("/api/Devices/crear_device", methods=["POST"])
 def crear_producto():
     data = request.get_json()
     if not data:

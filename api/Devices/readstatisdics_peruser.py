@@ -3,7 +3,7 @@ from flask import request,jsonify
 from ...models.CO2AnalyticsperDev import CalculateCO2forDevice
 from ...models.WattsAnalytics import calculateWatts
 import math 
-@app.route("/readstatisdics_peruser", methods=["POST"])
+@app.route("/api/Devices/readstatisdics_peruser", methods=["POST"])
 def statistics_per_user():
     data = request.get_json()
     email = data.get("email")

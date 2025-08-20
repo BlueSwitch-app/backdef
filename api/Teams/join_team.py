@@ -3,7 +3,7 @@ from flask import request,jsonify
 
 
 
-@app.route('/join_team', methods=['POST'])
+@app.route('/api/Teams/join_team', methods=['POST'])
 def join_team():
     data = request.json
     team_name = data['team_name']

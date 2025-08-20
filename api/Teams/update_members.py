@@ -3,7 +3,7 @@ from ..index import app, teamscollection
 from flask import request,jsonify
 
 
-@app.route("/update_members", methods=['POST'])
+@app.route("/api/Teams/update_members", methods=['POST'])
 def update_members():
     data = request.json
     team_code = data['teamcode']

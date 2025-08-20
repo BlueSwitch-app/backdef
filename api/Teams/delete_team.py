@@ -3,7 +3,7 @@ from ..index import app, teamscollection
 from flask import request,jsonify
 
 
-@app.route("/delete_team", methods=['POST'])
+@app.route("/api/Teams/delete_team", methods=['POST'])
 def delete_team():
     data = request.json
     team_code = data['teamcode']

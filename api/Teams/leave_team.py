@@ -2,7 +2,7 @@
 from ..index import app, teamscollection,devicescollection,discardDevicesCollection
 from flask import request,jsonify
 
-@app.route("/leave_team", methods=['POST'])
+@app.route("/api/Teams/leave_team", methods=['POST'])
 def leave_team():
     data = request.json
     user_email = data['email']

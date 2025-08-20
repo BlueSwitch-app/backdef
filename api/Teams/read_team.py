@@ -2,7 +2,7 @@
 from ..index import app, teamscollection
 from flask import request,jsonify
 
-@app.route("/read_team", methods=['POST'])
+@app.route("/api/Teams/read_team", methods=['POST'])
 def read_teams():
     data = request.json
     user_email = data['email']

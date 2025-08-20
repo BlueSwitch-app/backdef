@@ -1,7 +1,7 @@
 from ..index import app, userscollection
 from flask import request, jsonify
 
-@app.route("/get_user", methods=['POST'])
+@app.route("/api/Users/get_user", methods=['POST'])
 def get_user_info():
     data = request.json
     email = data.get('email')
