@@ -3,7 +3,7 @@ from ..index import app, devicescollection, discardDevicesCollection
 from flask import request,jsonify
 from datetime import datetime
 
-@app.route("/update-status", methods=['PUT'])
+@app.route("/api/Devices/update_status", methods=['PUT'])
 def update_device_status():
     data = request.get_json()
     device_id = data.get('id')
